@@ -1,0 +1,6 @@
+---
+
+- name: Deploy user and ssh keys
+  hosts: monserveur
+  roles:
+    - user-ssh
