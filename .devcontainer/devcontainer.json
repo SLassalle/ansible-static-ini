@@ -10,7 +10,9 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
+	"containerEnv": {
+		"EDITOR": "code --wait"
+	},
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "pip3 install --upgrade pip && pip3 install --user -r requirements.txt",
 	"customizations": {

@@ -5,6 +5,8 @@
     name: zef
     create_home: true
     shell: /bin/bash
+  tags:
+    - user
 
 - name: Copy SSH keys
   ansible.posix.authorized_key:
@@ -12,3 +14,12 @@
     state: present
     key: "https://github.com/{{ item }}.keys"
   loop: "{{ ssh_user }}"
+
+- name: Deploy env file
+  ansible.builtin.template:
+    src: .env.j2
+    dest: /home/zef/.env
+    mode: "0600"
+    owner: zef
+  tags:
+    - secret

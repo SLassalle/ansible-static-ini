@@ -1,3 +1,4 @@
 .ansible
 .ssh
 .vscode
+.vault
